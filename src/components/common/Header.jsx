@@ -328,22 +328,22 @@ function Header() {
 
       <div className="topbar-area topbar-style-one">
         <div className="container">
-          <div className="row">
+          <div className="row" style={{justifyContent:'space-between'}}>
             <div className="col-xl-4 align-items-center d-xl-flex d-none">
               <div className="topbar-contact-left">
                 <ul className="contact-list">
                   <li>
                     <i className="bi bi-telephone-fill" />
-                    <a href="tel:+1-847-555-5555"> +1 763-227-5032</a>
+                    <a href="tel:+1-847-555-5555"> 093 999 9999</a>
                   </li>
                   <li>
                     <i className="bi bi-envelope-fill" />
-                    <a href="mailto:someone@example.com">info@example.com</a>
+                    <a href="mailto:someone@example.com">Karneltravel@gmail.com</a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="col-xl-5 col-lg-6 col-md-6 text-xl-center text-md-start text-center">
+            {/* <div className="col-xl-5 col-lg-6 col-md-6 text-xl-center text-md-start text-center">
               <div className="topbar-ad">
                 <Link
                   onClick={scrollTop}
@@ -352,7 +352,7 @@ function Header() {
                   Black Friday Big Offer
                 </Link>
               </div>
-            </div>
+            </div> */}
             <div className="col-xl-3 col-lg-6 col-md-6 d-md-flex  d-none align-items-center justify-content-end">
               <ul className="topbar-social-links">
                 <li>
@@ -416,6 +416,7 @@ function Header() {
                     <img
                       src={process.env.PUBLIC_URL + "/images/logo.png"}
                       alt="logo"
+                      style={{width:'100%'}}
                     />
                   </Link>
                   <div className="d-flex align-items-center gap-4">
@@ -468,11 +469,21 @@ function Header() {
                       <img
                         src={process.env.PUBLIC_URL + "/images/logo.png"}
                         alt="catagoryIMG"
+                        style={{width:'100%'}}
                       />
                     </Link>
                   </div>
                   <ul>
-                    <li className="has-child-menu"  onClick={() => dispatch({type: 'homeOne'})}>
+                    <li>
+                      <Link
+                        to={`${process.env.PUBLIC_URL}/`}
+                        onClick={scrollTop}
+                      >
+                        Home
+                      </Link>
+                    </li>
+
+                    {/* <li className="has-child-menu"  onClick={() => dispatch({type: 'homeOne'})}>
                       <Link to={"#"} >Home</Link>
                       <i className="fl flaticon-plus">+</i>
                       <ul className={
@@ -513,7 +524,8 @@ function Header() {
                           </NavLink>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
+                    
                     <li>
                       <NavLink
                         onClick={scrollTop}
@@ -626,7 +638,7 @@ function Header() {
                         </li>
                       </ul>
                     </li>
-                    <li className="has-child-menu" onClick={()=> dispatch ({type: 'page'})}>
+                    {/* <li className="has-child-menu" onClick={()=> dispatch ({type: 'page'})}>
                       <Link to={"#"}>Pages</Link>
                       <i className="fl flaticon-plus">+</i>
                       <ul className={state.activeMenu ==="page"? "sub-menu d-block" : "sub-menu d-none"}>
@@ -663,7 +675,7 @@ function Header() {
                           </NavLink>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <NavLink
                         onClick={scrollTop}

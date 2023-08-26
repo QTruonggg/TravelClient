@@ -14,22 +14,28 @@ function GuideArea() {
             </div>
           </div>
           <div className="row g-4">
-            <div className="col-lg-4 col-md-6">
-              <GuideCardGama
-                image={process.env.PUBLIC_URL + "/images/guide/guide-md4.png"}
-                name="Amam Groff"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-3 col-md-6">
               <GuideCardGama
                 image={process.env.PUBLIC_URL + "/images/guide/guide-md5.png"}
-                name="Sebastian Mateo"
+                name="Đỗ Hồng Quân"
               />
             </div>
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-3 col-md-6">
               <GuideCardGama
                 image={process.env.PUBLIC_URL + "/images/guide/guide-md6.png"}
-                name="Theodore Aiden"
+                name="Lưu Quang Trường"
+              />
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <GuideCardGama
+                image={process.env.PUBLIC_URL + "/images/guide/guide-md4.png"}
+                name="Nguyễn Thái Nguyên"
+              />
+            </div>
+            <div className="col-lg-3 col-md-6">
+              <GuideCardGama
+                image={process.env.PUBLIC_URL + "/images/guide/guide-md4.png"}
+                name="Văn Thế Duy"
               />
             </div>
           </div>

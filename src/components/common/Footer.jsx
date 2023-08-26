@@ -24,9 +24,7 @@ function Footer(props) {
               <div className="col-lg-4">
                 <div className="footer-about text-lg-start text-center">
                   <p>
-                    Duis rutrum nisl urna. Maecenas vel libero faucibus nisi
-                    venenatis hendrerit a id lectus. Suspendissendt molestie
-                    turpis nec lacinia vehicula.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus commodi nostrum perspiciatis explicabo quibusdam tempora doloremque assumenda.
                   </p>
                   <div className="footer-social-wrap">
                     <h5>Follow Us On:</h5>
@@ -256,17 +254,17 @@ function Footer(props) {
               <ul className="footer-contact-list">
                 <li>
                   <i className="bi bi-telephone-x" />{" "}
-                  <a rel="noopener noreferrer" href="tel:+1 763-227-5032">
-                    +1 763-227-5032
+                  <a rel="noopener noreferrer" href="tel:093 999 9999">
+                    093 999 9999
                   </a>
                 </li>
                 <li>
                   <i className="bi bi-envelope-open" />{" "}
-                  <a href="mailto:info@example.com">info@example.com</a>
+                  <a href="mailto:KarnelTravel@example.com">KarnelTravel@example.com</a>
                 </li>
                 <li>
                   <i className="bi bi-geo-alt" />{" "}
-                  <Link to={"#"}>2752 Willison Street Eagan, United State</Link>
+                  <Link to={"#"}>No. 8A Ton That Thuyet - Nam Tu Liem - HaNoi</Link>
                 </li>
               </ul>
             </div>
@@ -278,14 +276,14 @@ function Footer(props) {
               <div className="col-lg-4 col-md-6 order-lg-1 order-3 ">
                 <div className="copyright-link text-lg-start text-center">
                   <p>
-                    Copyright 2022 TourXPro | Design By{" "}
+                    Copyright 2023 Karnel Travels | Design By{" "}
                     <a
                       rel="noopener noreferrer"
-                      href="https://www.egenslab.com/"
+                      href="https://www.google.com/"
                       target="_blank"
                     >
                       {" "}
-                      Egens Lab
+                      Karnel Team 
                     </a>
                   </p>
                 </div>
@@ -293,7 +291,7 @@ function Footer(props) {
               <div className="col-lg-4  order-lg-2 order-1">
                 <div className="footer-logo text-center">
                   <Link onClick={scrollTop} to={`${process.env.PUBLIC_URL}/`}>
-                    <img src={process.env.PUBLIC_URL + "/images/logo-w.png"} alt="FooterIMG" />
+                    <img src={process.env.PUBLIC_URL + "/images/logoK.png"} alt="FooterIMG" style={{width:'50%'}}/>
                   </Link>
                 </div>
               </div>

@@ -47,8 +47,8 @@ function DestinationArea() {
           <div className="row align-items-center">
             <div className="col-lg-8">
               <div className="section-head-alpha">
-                <h2>Explore Top Destination</h2>
-                <p>
+                <h2 style={{color:'#fff'}}>Explore Top Destination</h2>
+                <p style={{color:'#fff'}}>
                   Duis rutrum nisl urna. Maecenas vel libero faucibus nisi
                   venenatis hendrerit a id lectus. Suspendissendt blandit
                   interdum. Sed pellentesque at nunc eget consectetur..

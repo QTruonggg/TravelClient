@@ -867,8 +867,8 @@ accordion defult style
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #ffb6af;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -896,7 +896,7 @@ accordion defult style
 .custom-swiper-next i,
 .custom-swiper-prev i {
   color: #ffb6af;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .custom-swiper-next-sm,
@@ -4964,7 +4964,7 @@ header .header-style-two .nav-right .nav-right-hotline .hotline-info h6 a {
 ==============================*/
 .destination-style-one .custom-swiper-next,
 .destination-style-one .custom-swiper-prev {
-  border: 1px solid #ff4838 !important;
+  border: 2px solid #ff4838 !important;
   opacity: 0.5;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;

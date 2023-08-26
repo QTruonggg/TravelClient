@@ -9,6 +9,8 @@ import Testimonial3 from "./Testimonial3";
 import TopDestination from "./TopDestination";
 import Tourguide3 from "./Tourguide3";
 import UpcomingTour from "./UpcomingTour";
+import DestinationArea from '../Home/DestinationArea'
+import GallaryArea from "../Home/GallaryArea";
 
 function HomePage3() {
   return (
@@ -17,8 +19,13 @@ function HomePage3() {
       <SearchBar/>
       <PackageArea/>
       <TopDestination/>
+
       <UpcomingTour/>
-      <OfferPackage/>
+      
+      <GallaryArea/>
+
+      {/* <OfferPackage/> */}
+      
       <Testimonial3/>
       <Tourguide3/>
       <BlogArea3/>

@@ -225,10 +225,11 @@ function HomePageThreeHeader() {
             <div className="row">
               <div className="col-xxl-2 col-xl-2 col-lg-12 col-md-12 col-sm-12 col-xs-12 align-items-center d-xl-flex d-lg-block">
                 <div className="nav-logo d-flex justify-content-between align-items-center">
-                  <a href="index.html">
+                  <a href="/">
                     <img
-                      src={process.env.PUBLIC_URL + "/images/logo-w.png"}
+                      src={process.env.PUBLIC_URL + "/images/logoK.png"}
                       alt="logo"
+                      style={{width:'90%'}}
                     />
                   </a>
                   <div className="mobile-menu d-flex ">
@@ -299,7 +300,15 @@ function HomePageThreeHeader() {
                     </Link>
                   </div>
                   <ul>
-                    <li
+                    <li>
+                      <Link
+                        to={`${process.env.PUBLIC_URL}/`}
+                        onClick={scrollTop}
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    {/* <li
                       className="has-child-menu"
                       onClick={() => dispatch({ type: "homeOne" })}
                     >
@@ -331,7 +340,7 @@ function HomePageThreeHeader() {
                           </Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         to={`${process.env.PUBLIC_URL}/about`}
@@ -465,7 +474,7 @@ function HomePageThreeHeader() {
                         </li>
                       </ul>
                     </li>
-                    <li
+                    {/* <li
                       className="has-child-menu"
                       onClick={() => dispatch({ type: "page" })}
                     >
@@ -511,7 +520,7 @@ function HomePageThreeHeader() {
                           </Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         to={`${process.env.PUBLIC_URL}/contact`}
@@ -548,7 +557,7 @@ function HomePageThreeHeader() {
                     <div className="hotline-info">
                       <span>Hot Line Number</span>
                       <h6>
-                        <a href="tel:8801761111456">+880 176 1111 456</a>
+                        <a href="tel:8801761111456">093 999 9999</a>
                       </h6>
                     </div>
                   </div>

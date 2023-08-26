@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade, Navigation, Pagination } from "swiper";
+import DestinationArea from '../Home/DestinationArea';
 const scrollTop = ()=>{window.scrollTo({top: 0, behavior: "smooth"})}
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, EffectFade]);
@@ -43,7 +44,7 @@ function UpcomingTour() {
   return (
     <>
      <div className="upcoming-tour-area pt-110 pb-110 chain">
-        <div className="container">
+        {/* <div className="container">
           <div className="row d-flex justify-content-center align-items-center">
             <div className="col-lg-5 d-flex justify-content-lg-start justify-content-center">
               <div className="section-head-alpha text-lg-start text-center">
@@ -92,7 +93,9 @@ function UpcomingTour() {
               <a href="destination.html" className="button-outlined-primary upcoming-btn mt-50">View All Offer</a>
             </div>
           </div>
-        </div>
+        </div> */}
+        <DestinationArea />
+
       </div>   
     </>
   )

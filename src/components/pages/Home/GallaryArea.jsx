@@ -4,7 +4,7 @@ function GallaryArea() {
   return (
     <>
       <SRLWrapper>
-        <div className="gallary-area gallary-style-one pt-110">
+        <div className="gallary-area gallary-style-one pt-110 pb-110 ">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8">
