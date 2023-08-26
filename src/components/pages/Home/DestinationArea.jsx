@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axiosInstance from '../../../utils/axiosInstance';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -39,6 +40,23 @@ function DestinationArea() {
       },
     },
   };
+
+  const [touristSpot, setTouristSpot] = useState([]);
+
+  useEffect(() => {
+    axiosInstance("api/TouristSpot")
+      .then((response) => {
+        // console.log("call api TouristSpot");
+        setTouristSpot(response.data);
+        // console.log(response.data);
+      })
+      .catch((error) => {
+        console.log("call api TouristSpot lỗi");
+        console.error("Error fetching data:", error);
+      });
+  }, []); 
+
+
   return (
     <>
       {/* =============== destination area start =============== */}
@@ -83,13 +101,31 @@ function DestinationArea() {
             className="swiper destination-slider-one"
           >
             <div className="swiper-wrapper">
-              <SwiperSlide className="swiper-slide">
+                {/* {
+                  touristSpot.map(touristSpot => (
+                    console.log(touristSpot)
+                  ))
+                } */}
+              
+              {
+                touristSpot.map((touristSpot) => (
+                  <SwiperSlide key={touristSpot.id} className="swiper-slide">
+                    <HomeOneDestinationCart
+                      image={process.env.PUBLIC_URL + touristSpot.images[0].imageUrl}
+                      title={touristSpot.name}
+                      tours={touristSpot.tours.length}
+                      hotel={touristSpot.hotels.length}
+                    />
+                  </SwiperSlide>
+                ))
+              }
+              {/* <SwiperSlide className="swiper-slide">
                 <HomeOneDestinationCart
                   image={
                     process.env.PUBLIC_URL + "/images/destination/dest-3.png"
                   }
                   title="Marakana"
-                  place="15"
+                  tours="15"
                   hotel="16"
                 />
               </SwiperSlide>
@@ -99,7 +135,7 @@ function DestinationArea() {
                     process.env.PUBLIC_URL + "/images/destination/dest-2.png"
                   }
                   title="Augsburg"
-                  place="10"
+                  tours="10"
                   hotel="18"
                 />
               </SwiperSlide>
@@ -109,7 +145,7 @@ function DestinationArea() {
                     process.env.PUBLIC_URL + "/images/destination/dest-4.png"
                   }
                   title="Dusseldorf"
-                  place="15"
+                  tours="15"
                   hotel="25"
                 />
               </SwiperSlide>
@@ -119,7 +155,7 @@ function DestinationArea() {
                     process.env.PUBLIC_URL + "/images/destination/dest-2.png"
                   }
                   title="Nuremberg"
-                  place="20"
+                  tours="20"
                   hotel="28"
                 />
               </SwiperSlide>
@@ -129,10 +165,10 @@ function DestinationArea() {
                     process.env.PUBLIC_URL + "/images/destination/dest-3.png"
                   }
                   title="Wiesbaden"
-                  place="6"
+                  tours="6"
                   hotel="12"
                 />
-              </SwiperSlide>
+              </SwiperSlide> */}
             </div>
           </Swiper>
         </div>

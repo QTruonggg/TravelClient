@@ -7,12 +7,12 @@ function TopDestination() {
   useEffect(() => {
     axiosInstance('api/District')
         .then(response => {
-            console.log("call api");
+            // console.log("call api district");
             setDistricts(response.data); 
             // console.log(response.data);
         })
         .catch(error => {
-            console.log("call api lỗi");
+            console.log("call api district lỗi");
             console.error('Error fetching online users:', error);
         });
 }, []);
@@ -101,7 +101,7 @@ function TopDestination() {
         </div>
         <div className="destination-overlay">
           <div className="content">
-            <a href="destination-details.html"><h5>{props.title}</h5></a>
+            <a href="destination-details.html"><h5 style={{fontSize:'36px'}}>{props.title}</h5></a>
             <a href="destination-details.html"><h6>{props.place}</h6></a>
           </div>
         </div>

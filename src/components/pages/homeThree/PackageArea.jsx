@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../../utils/axiosInstance";
 
 const scrollTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 function PackageArea() {
+
+  const [tours, setTours] = useState([]);
+
+  useEffect(() => {
+    axiosInstance("api/Tour")
+      .then((response) => {
+        console.log("call api Tour");
+        setTours(response.data);
+        // console.log(response.data);
+      })
+      .catch((error) => {
+        console.log("call api Tour lỗi");
+        console.error("Error fetching data:", error);
+      });
+  }, []); 
+
   return (
     <>
       <div className="package-area package-style-two pt-110 chain">
@@ -13,7 +30,7 @@ function PackageArea() {
           <div className="row d-flex justify-content-center align-items-center">
             <div className="col-lg-8 col-sm-10">
               <div className="section-head-alpha">
-                <h2>Best Selling Tours</h2>
+                <h2>Best Tours</h2>
                 <p>
                   Duis rutrum nisl urna. Maecenas vel libero faucibus nisi
                   venenatis hendrerit a id lectus. Suspendissendt blandit
@@ -33,14 +50,24 @@ function PackageArea() {
             </div>
           </div>
           <div className="row d-flex justify-content-center g-4">
-            <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
-              <PackageCardBeta
-                image="/images/package/best-s1.png"
-                time="1 Day &amp; 2 night"
-                title="Etiam placerat dictum consequat an Pellentesque habitant morbi."
-                price="$10.00"
-              />
-            </div>
+                {/* {
+                  tours.map(tour => (
+                    console.log(tour)
+                  ))
+                } */}
+            {  
+             tours.map(tour => (
+              <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
+                <PackageCardBeta
+                  image={process.env.PUBLIC_URL + tour.images[0].imageUrl}
+                  time={tour.duration}
+                  title={tour.name}
+                  price={tour.price}
+                />
+              </div>
+              ))
+            }
+            
             <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
               <PackageCardBeta
                 image="/images/package/best-s2.png"
@@ -84,6 +111,7 @@ function PackageArea() {
                 price="$69.00"
               />
             </div>
+            
           </div>
           <div className="package-page-btn text-center mt-60">
             <a href="package.html" className="button-fill-round">
@@ -99,8 +127,8 @@ function PackageArea() {
 function PackageCardBeta(props) {
   return (
     <>
-      <div className="package-card-beta">
-        <div className="package-thumb">
+      <div className="package-card-beta" style={{height:'100%'}}>
+        <div className="package-thumb" style={{height:'60%'}}>
           <Link
             to={`${process.env.PUBLIC_URL}/package-details`}
             onClick={scrollTop}
@@ -108,6 +136,7 @@ function PackageCardBeta(props) {
             <img
               src={`${process.env.PUBLIC_URL} ${props.image}`}
               alt="package-details img"
+              style={{height:'100%', objectFit:'cover'}}
             />
           </Link>
           <p className="card-lavel">
@@ -129,13 +158,13 @@ function PackageCardBeta(props) {
                 to={`${process.env.PUBLIC_URL}/package-details`}
                 onClick={scrollTop}
               >
-                Book Now <i className="bx bxs-right-arrow-alt" />
+                View Now <i className="bx bxs-right-arrow-alt" />
               </Link>
             </div>
             <div className="p-card-info">
               <span>From</span>
               <h6>
-                {props.price} <span>Per Person</span>
+                ${props.price} <span>Per Person</span>
               </h6>
             </div>
           </div>
