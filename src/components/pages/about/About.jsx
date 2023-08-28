@@ -9,9 +9,9 @@ function About() {
   return (
     <>
       <Breadcrumb name="About" />
+      <GuideArea />
       <AboutWrapperArea />
       <TestimonialArea />
-      <GuideArea />
       <BlogArea />
     </>
   );

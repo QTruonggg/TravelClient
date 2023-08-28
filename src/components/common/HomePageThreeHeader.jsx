@@ -349,7 +349,15 @@ function HomePageThreeHeader() {
                         About Us
                       </Link>
                     </li>
-                    <li
+                    <li>
+                      <Link
+                        to={`${process.env.PUBLIC_URL}/destination`}
+                        onClick={scrollTop}
+                      >
+                        Destination
+                      </Link>
+                    </li>
+                    {/* <li
                       className="has-child-menu"
                       onClick={() => dispatch({ type: "destination" })}
                     >
@@ -379,8 +387,16 @@ function HomePageThreeHeader() {
                           </Link>
                         </li>
                       </ul>
+                    </li> */}
+                    <li>
+                      <Link
+                        to={`${process.env.PUBLIC_URL}/package`}
+                        onClick={scrollTop}
+                      >
+                        Tour
+                      </Link>
                     </li>
-                    <li
+                    {/* <li
                       className="has-child-menu"
                       onClick={() => dispatch({ type: "package" })}
                     >
@@ -423,6 +439,28 @@ function HomePageThreeHeader() {
                             onClick={scrollTop}
                           >
                             Package Details{" "}
+                          </Link>
+                        </li>
+                      </ul>
+                    </li> */}
+                    <li className="has-child-menu" onClick={()=> dispatch({type: 'stay'})}>
+                      <Link to={"#"}>Stay</Link>
+                      <i className="fl flaticon-plus">+</i>
+                      <ul className={state.activeMenu === "Stay" ? "sub-menu d-block" : "sub-menu d-none"}>
+                        <li>
+                          <Link
+                            onClick={scrollTop}
+                            to={`${process.env.PUBLIC_URL}/hotel`}
+                          >
+                            Hotel
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            onClick={scrollTop}
+                            to={`${process.env.PUBLIC_URL}/resort`}
+                          >
+                            Resort
                           </Link>
                         </li>
                       </ul>

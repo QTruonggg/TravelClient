@@ -27,6 +27,8 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import "./index.css";
 import HomethreeLayout from './components/layout/HomethreeLayout';
 import HomeFourLayout from './components/layout/HomeFourLayout';
+import Hotel from './components/pages/stay/Hotel';
+import Resort from './components/pages/stay/Resort';
 
 /*
  * Version :Tourx-pro 0.1
@@ -101,6 +103,18 @@ function Root() {
             exact
             path={`${process.env.PUBLIC_URL}/package-details`}
             component={PackageDetails}
+          />
+
+          {/* all stay pages component*/}
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/hotel`}
+            component={Hotel}
+          />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/resort`}
+            component={Resort}
           />
 
           {/* all blog pages */}

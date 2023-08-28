@@ -5,7 +5,7 @@ import PackageGridWrapper from "./PackageGridWrapper";
 function PackageGrid() {
   return (
     <>
-      <Breadcrumb name="Tour Package" />
+      <Breadcrumb name="All Tour" />
       <PackageGridWrapper />
     </>
   );

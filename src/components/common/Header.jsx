@@ -534,7 +534,15 @@ function Header() {
                         About Us
                       </NavLink>
                     </li>
-                    <li className="has-child-menu" onClick={()=> dispatch({type: 'destination'})}>
+                    <li>
+                      <Link
+                        to={`${process.env.PUBLIC_URL}/destination`}
+                        onClick={scrollTop}
+                      >
+                        Destination
+                      </Link>
+                    </li>
+                    {/* <li className="has-child-menu" onClick={()=> dispatch({type: 'destination'})}>
                       <Link to={"#"}>Destination</Link>
                       <i className="fl flaticon-plus">+</i>
                       <ul className={state.activeMenu === "destination" ? "sub-menu d-block" : "sub-menu d-none"}>
@@ -555,9 +563,17 @@ function Header() {
                           </NavLink>
                         </li>
                       </ul>
+                    </li> */}
+                    <li>
+                      <NavLink
+                        onClick={scrollTop}
+                        to={`${process.env.PUBLIC_URL}/package`}
+                      >
+                        Tour
+                      </NavLink>
                     </li>
-                    <li className="has-child-menu" onClick={()=> dispatch({type: 'package'})}>
-                      <Link to={"#"}>Package</Link>
+                    {/* <li className="has-child-menu" onClick={()=> dispatch({type: 'package'})}>
+                      <Link to={"#"}>Tour</Link>
                       <i className="fl flaticon-plus">+</i>
                       <ul
                         className={
@@ -596,6 +612,28 @@ function Header() {
                             to={`${process.env.PUBLIC_URL}/package-details`}
                           >
                             Package Details
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </li> */}
+                    <li className="has-child-menu" onClick={()=> dispatch({type: 'stay'})}>
+                      <Link to={"#"}>Stay</Link>
+                      <i className="fl flaticon-plus">+</i>
+                      <ul className={state.activeMenu === "Stay" ? "sub-menu d-block" : "sub-menu d-none"}>
+                        <li>
+                          <NavLink
+                            onClick={scrollTop}
+                            to={`${process.env.PUBLIC_URL}/hotel`}
+                          >
+                            Hotel
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            onClick={scrollTop}
+                            to={`${process.env.PUBLIC_URL}/resort`}
+                          >
+                            Resort
                           </NavLink>
                         </li>
                       </ul>

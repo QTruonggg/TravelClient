@@ -54,7 +54,7 @@ function Home3HeroArea() {
                           <span className="title-top">Wellcome To Karnel Travels</span>
                           <h1>Journey to Explore <br/> Viet Nam</h1>
                           <p>Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis. Nullam dapibus on erat in dolor posuere, none hendrerit lectus ornare. Suspendisse sit amet turpina sagittis, ultrices dui et, aliquam urna.</p>
-                          <Link to={"#"} className="button-fill-primary banner3-btn">Book Your Travel</Link>
+                          {/* <Link to={"#"} className="button-fill-primary banner3-btn">Book Your Travel</Link> */}
                         </div>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ function Home3HeroArea() {
                           <span className="title-top">Wellcome To Karnel Travels</span>
                           <h1>Enjoy Your New Adventure</h1>
                           <p>Nulla facilisi. Maecenas ac tellus ut ligula interdum convallis. Nullam dapibus on erat in dolor posuere, none hendrerit lectus ornare. Suspendisse sit amet turpina sagittis, ultrices dui et, aliquam urna.</p>
-                          <Link to={"#"} className="button-fill-primary banner3-btn">Book Your Travel</Link>
+                          {/* <Link to={"#"} className="button-fill-primary banner3-btn">Book Your Travel</Link> */}
                         </div>
                       </div>
                     </div>

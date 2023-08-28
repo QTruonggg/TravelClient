@@ -22,20 +22,20 @@ function ContactWrapperArea() {
                 <ul>
                   <li>
                     <h6>Let’s Talk</h6>
-                    <a href="mailto:info@example.com">info@example.com</a>
-                    <a href="mailto:support@example.com">info@support.com</a>
+                    <a href="mailto:KarnelTravel@example.com">KarnelTravel@example.com</a>
+                    <a href="mailto:KarnelTravel@example.com">KarnelTravel@support.com</a>
                     <a
                       rel="noopener noreferrer"
                       target="_blank"
-                      href="tel:+88 0176 1111 456"
+                      href="tel:093 999 9999"
                     >
-                      +88 0176 1111 456
+                      093 999 9999
                     </a>
                   </li>
                   <li>
                     <h6>Location.</h6>
-                    <a href="https://goo.gl/maps/8cLmgUVZ322s9FLA6">
-                      168/170, Ave 01, Streets Suite 666 Mirpur DOHS, Bangladesh
+                    <a href="#">
+                        No. 8A Ton That Thuyet - Nam Tu Liem - HaNoi
                     </a>
                   </li>
                   <li>
@@ -43,16 +43,16 @@ function ContactWrapperArea() {
                     <a
                       rel="noopener noreferrer"
                       target="_blank"
-                      href="https://www.facebook.com/egenslab"
+                      href="https://www.facebook.com"
                     >
-                      Facebook: https://www.facebook.com/egenslab
+                      Facebook: https://www.facebook.com/
                     </a>
                     <a
                       rel="noopener noreferrer"
                       target="_blank"
-                      href="https://twitter.com/EgensLab"
+                      href="https://twitter.com"
                     >
-                      Twitter: https://www.twitter.com/egenslab
+                      Twitter: https://www.twitter.com/
                     </a>
                   </li>
                 </ul>
@@ -68,7 +68,7 @@ function ContactWrapperArea() {
                   title="map"
                   id="gmap_canvas"
                   src={
-                    "https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=9&ie=UTF8&iwloc=&output=embed"
+                    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391.447704332301!2d105.782238225932!3d21.02871796142811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab86cece9ac1%3A0xa9bc04e04602dd85!2zRlBUIEFwdGVjaCBIw6AgTuG7mWkgLSBI4buHIFRo4buRbmcgxJDDoG8gVOG6oW8gTOG6rXAgVHLDrG5oIFZpw6puIFF14buRYyBU4bq_IChTaW5jZSAxOTk5KQ!5e0!3m2!1svi!2s!4v1693238740071!5m2!1svi!2s"
                   }
                 />
                 <Link to={"https://123movies-to.org"} />

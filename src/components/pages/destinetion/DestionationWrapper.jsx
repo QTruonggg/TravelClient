@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Pagination from "../../common/Pagination";
 import DestinationCart from "./DestinationCart";
+import axiosInstance from "../../../utils/axiosInstance";
 
 function DestionationWrapper() {
+  const [districts, setDistricts] = useState([]);
+
+  useEffect(() => {
+    axiosInstance('api/District')
+        .then(response => {
+            // console.log("call api district");
+            setDistricts(response.data); 
+            // console.log(response.data);
+        })
+        .catch(error => {
+            console.log("call api district lỗi");
+            console.error('Error fetching online users:', error);
+        });
+}, []);
+
   return (
     <>
       <div className="destination-wrapper pt-110">
         <div className="container">
           <div className="row g-3">
+          {
+            districts.map((district, index) => (
+              <div className="col-lg-3 col-md-4 col-sm-6" style={{height:'288px'}}>
+                <DestinationCart 
+                  image={district.images[0].imageUrl} 
+                  palce={district.name} 
+                  palceCount={`${district.touristspots.length}`} />
+              </div>
+            ))
+            }
             <div className="col-lg-3 col-md-4 col-sm-6">
               <DestinationCart
                 image={

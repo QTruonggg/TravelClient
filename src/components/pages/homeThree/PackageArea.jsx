@@ -41,7 +41,7 @@ function PackageArea() {
             <div className="col-lg-4 col-sm-10">
               <div className="package-btn text-lg-end">
                 <a
-                  href="package.html"
+                  href="package"
                   className="button-fill-primary all-package-btn"
                 >
                   View All Tour
@@ -114,7 +114,7 @@ function PackageArea() {
             
           </div>
           <div className="package-page-btn text-center mt-60">
-            <a href="package.html" className="button-fill-round">
+            <a href="package" className="button-fill-round">
               View All
             </a>
           </div>

@@ -167,8 +167,8 @@ function AboutWrapperArea() {
             <div className="col-lg-6">
               <div className="achievement-counter-wrap">
                 <h2 className="about-wrap-title">
-                  Why Package Book With
-                  <span>TourX Pro?</span>
+                  Why Package View With <br />
+                  <span> Karnel Travel</span>
                 </h2>
                 <div className="achievement-counter-cards">
                   <div className="achievement-counter-card flex-sm-row flex-column text-sm-start text-center ">

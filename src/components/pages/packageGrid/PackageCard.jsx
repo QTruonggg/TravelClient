@@ -8,13 +8,13 @@ function PackageCard(props) {
   
   return (
     <>
-      <div className="package-card-alpha">
-        <div className="package-thumb">
+      <div className="package-card-alpha" style={{height:'100%'}}>
+        <div className="package-thumb" style={{height:'60%'}}>
           <Link
             onClick={scrollTop}
             to={`${process.env.PUBLIC_URL}/package-details`}
           >
-            <img src={props.image} alt="images" />
+            <img src={props.image} alt="images" style={{height:'100%', objectFit:'cover'}}/>
           </Link>
           <p className="card-lavel">
             <i className="bi bi-clock" /> <span>{props.date}</span>
@@ -35,13 +35,13 @@ function PackageCard(props) {
                 onClick={scrollTop}
                 to={`${process.env.PUBLIC_URL}/package-details`}
               >
-                Book Now <i className="bx bxs-right-arrow-alt" />
+                View Now <i className="bx bxs-right-arrow-alt" />
               </Link>
             </div>
             <div className="p-card-info">
               <span>From</span>
               <h6>
-                {props.price} <span>Per Person</span>
+                $ {props.price} <span>Per Person</span>
               </h6>
             </div>
           </div>

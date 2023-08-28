@@ -1,38 +1,38 @@
 import React, { useEffect, useState } from "react";
+import Breadcrumb from "../../common/Breadcrumb";
 import Pagination from "../../common/Pagination";
-import PackageCard from "./PackageCard";
+import PackageCard from "../packageGrid/PackageCard";
 import axiosInstance from "../../../utils/axiosInstance";
 
-function PackageGridWrapper() {
-  const [tours, setTours] = useState([]);
+function Hotel() {
+    const [hotel, setHotel] = useState([]);
 
   useEffect(() => {
-    axiosInstance("api/Tour")
+    axiosInstance("api/Hotel")
       .then((response) => {
-        console.log("call api Tour");
-        setTours(response.data);
+        console.log("call api Hotel");
+        setHotel(response.data);
         // console.log(response.data);
       })
       .catch((error) => {
-        console.log("call api Tour lỗi");
+        console.log("call api Hotel lỗi");
         console.error("Error fetching data:", error);
       });
   }, []);
-  
   return (
     <>
-      {/* ===============  Package gird area start =============== */}
+      <Breadcrumb name="All Hotel" />
       <div className="package-wrapper pt-110">
         <div className="container">
           <div className="row g-4">
             {  
-             tours.map(tour => (
+             hotel.map(hotel => (
               <div className="col-lg-4 col-md-6">
                 <PackageCard
-                  image={process.env.PUBLIC_URL + tour.images[0].imageUrl}
-                  date={tour.duration}
-                  title={tour.name}
-                  price={tour.price}
+                  image={process.env.PUBLIC_URL + hotel.images[0].imageUrl}
+                  date={hotel.duration}
+                  title={hotel.name}
+                  price={hotel.price}
                 />
               </div>
               ))
@@ -139,9 +139,8 @@ function PackageGridWrapper() {
           <Pagination />
         </div>
       </div>
-      {/* ===============  Package gird area end =============== */}
     </>
   );
 }
 
-export default PackageGridWrapper;
+export default Hotel;
