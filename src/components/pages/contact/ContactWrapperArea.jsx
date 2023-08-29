@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../../utils/axiosInstance";
 
 function ContactWrapperArea() {
+  const [feedback,setFeedback] = useState({name:"",email:"",content:""});
+
+  const handleInput = (event)=>{
+    feedback[event.target.name] = event.target.value;
+    setFeedback(feedback);
+}
+const feedbackSubmit = async (e)=>{
+  e.preventDefault();
+  try{
+    const feedbackData = new FormData();
+    feedbackData.append('name', feedback.name);
+    feedbackData.append('email', feedback.email);
+    feedbackData.append('content', feedback.content);
+    await axiosInstance('api/Feedback', 'POST', feedbackData);
+
+    console.log("gui thanh cong",feedbackData);
+    setFeedback({ name: "", email: "", content: "" });
+
+
+  }catch(error){
+    console.error(error);
+
+  }
+}
   return (
     <>
       <div className="contact-wrapper pt-110">
@@ -78,7 +103,7 @@ function ContactWrapperArea() {
           </div>
         </div>
         <div className="container pt-110">
-          <form onSubmit={(e) => e.preventDefault()} id="contact_form">
+          <form onSubmit={feedbackSubmit} id="contact_form" method="post">
             <div className="contact-form-wrap">
               <h4>Get a free key stroke quote now</h4>
               <p>
@@ -90,6 +115,8 @@ function ContactWrapperArea() {
                   <div className="custom-input-group">
                     <label htmlFor="name">Name</label>
                     <input
+                     onChange={handleInput}
+                     name="name"
                       required
                       type="text"
                       placeholder="Your name"
@@ -101,8 +128,10 @@ function ContactWrapperArea() {
                   <div className="custom-input-group">
                     <label htmlFor="email">Email</label>
                     <input
+                    onChange={handleInput}
+                    name="email"
                       required
-                      type="text"
+                      type="email"
                       placeholder="Your Email"
                       id="email"
                     />
@@ -111,6 +140,8 @@ function ContactWrapperArea() {
               </div>
               <div className="custom-input-group">
                 <textarea
+                 onChange={handleInput}
+                 name="content"
                   cols={20}
                   rows={7}
                   required
@@ -126,6 +157,7 @@ function ContactWrapperArea() {
             </div>
           </form>
         </div>
+
       </div>
     </>
   );
