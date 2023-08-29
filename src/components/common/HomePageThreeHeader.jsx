@@ -463,6 +463,14 @@ function HomePageThreeHeader() {
                             Resort
                           </Link>
                         </li>
+                          <li>
+                          <Link
+                            onClick={scrollTop}
+                            to={`${process.env.PUBLIC_URL}/restaurant`}
+                          >
+                            Restaurant
+                          </Link>
+                        </li>
                       </ul>
                     </li>
                     <li

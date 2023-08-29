@@ -636,6 +636,14 @@ function Header() {
                             Resort
                           </NavLink>
                         </li>
+                        <li>
+                          <NavLink
+                            onClick={scrollTop}
+                            to={`${process.env.PUBLIC_URL}/restaurant`}
+                          >
+                            Restaurant
+                          </NavLink>
+                        </li>
                       </ul>
                     </li>
                     <li className="has-child-menu" onClick={()=> dispatch ({type: 'blog'})}>

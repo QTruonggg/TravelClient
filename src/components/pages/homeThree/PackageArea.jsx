@@ -93,24 +93,7 @@ function PackageArea() {
                 price="$87.00"
               />
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-10 fadeffect">
-              <PackageCardBeta
-                image="/images/package/best-s4.png"
-                time="3 Day &amp; 2 night"
-                title="Pellentesque habitant morbi malesua
-                tristique senectus et netus et."
-                price="$69.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-10 fadeffect">
-              <PackageCardBeta
-                image="/images/package/best-s6.png"
-                time="3 Day &amp; 2 night"
-                title="Pellentesque habitant morbi malesua
-                tristique senectus et netus et."
-                price="$69.00"
-              />
-            </div>
+            
             
           </div>
           <div className="package-page-btn text-center mt-60">

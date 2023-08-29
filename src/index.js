@@ -116,6 +116,11 @@ function Root() {
             path={`${process.env.PUBLIC_URL}/resort`}
             component={Resort}
           />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/resort`}
+            component={Resort}
+          />
 
           {/* all blog pages */}
           <Route
