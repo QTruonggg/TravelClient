@@ -65,7 +65,7 @@ function DestinationArea() {
           <div className="row align-items-center">
             <div className="col-lg-8">
               <div className="section-head-alpha">
-                <h2 style={{color:'#fff'}}>Explore Top Destination</h2>
+                <h2 style={{color:'#fff'}}>Explore Top TourSpots</h2>
                 <p style={{color:'#fff'}}>
                   Duis rutrum nisl urna. Maecenas vel libero faucibus nisi
                   venenatis hendrerit a id lectus. Suspendissendt blandit
@@ -101,11 +101,6 @@ function DestinationArea() {
             className="swiper destination-slider-one"
           >
             <div className="swiper-wrapper">
-                {/* {
-                  touristSpot.map(touristSpot => (
-                    console.log(touristSpot)
-                  ))
-                } */}
               
               {
                 touristSpot.map((touristSpot) => (
@@ -119,56 +114,7 @@ function DestinationArea() {
                   </SwiperSlide>
                 ))
               }
-              {/* <SwiperSlide className="swiper-slide">
-                <HomeOneDestinationCart
-                  image={
-                    process.env.PUBLIC_URL + "/images/destination/dest-3.png"
-                  }
-                  title="Marakana"
-                  tours="15"
-                  hotel="16"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <HomeOneDestinationCart
-                  image={
-                    process.env.PUBLIC_URL + "/images/destination/dest-2.png"
-                  }
-                  title="Augsburg"
-                  tours="10"
-                  hotel="18"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <HomeOneDestinationCart
-                  image={
-                    process.env.PUBLIC_URL + "/images/destination/dest-4.png"
-                  }
-                  title="Dusseldorf"
-                  tours="15"
-                  hotel="25"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <HomeOneDestinationCart
-                  image={
-                    process.env.PUBLIC_URL + "/images/destination/dest-2.png"
-                  }
-                  title="Nuremberg"
-                  tours="20"
-                  hotel="28"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <HomeOneDestinationCart
-                  image={
-                    process.env.PUBLIC_URL + "/images/destination/dest-3.png"
-                  }
-                  title="Wiesbaden"
-                  tours="6"
-                  hotel="12"
-                />
-              </SwiperSlide> */}
+
             </div>
           </Swiper>
         </div>

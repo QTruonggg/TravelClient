@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../../utils/axiosInstance";
+import { useTour } from "../../TourContext";
 
 function PackageCard(props) {
+  const { setTourDetails } = useTour();
+
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const handleTourClick = () => {
+    axiosInstance(`api/Tour/${props.tourId}`)
+      .then((response) => {
+        console.log("Tour details:", response.data);
+        localStorage.setItem('tourDetails', JSON.stringify(response.data));
+        setTourDetails(response.data); // Thiết lập thông tin tour
+      })
+      .catch((error) => {
+        console.error("Error fetching tour details:", error);
+      });
+  }
   
   return (
     <>
       <div className="package-card-alpha" style={{height:'100%'}}>
         <div className="package-thumb" style={{height:'60%'}}>
           <Link
-            onClick={scrollTop}
-            to={`${process.env.PUBLIC_URL}/package-details`}
+            onClick={handleTourClick}
+            to={`${process.env.PUBLIC_URL}/package-details/${props.title}`}
           >
             <img src={props.image} alt="images" style={{height:'100%', objectFit:'cover'}}/>
           </Link>
@@ -23,8 +39,8 @@ function PackageCard(props) {
         <div className="package-card-body">
           <h3 className="p-card-title">
             <Link
-              onClick={scrollTop}
-              to={`${process.env.PUBLIC_URL}/package-details`}
+             onClick={handleTourClick}
+               to={`${process.env.PUBLIC_URL}/package-details/${props.title}`}
             >
               {props.title}
             </Link>
@@ -32,8 +48,8 @@ function PackageCard(props) {
           <div className="p-card-bottom">
             <div className="book-btn">
               <Link
-                onClick={scrollTop}
-                to={`${process.env.PUBLIC_URL}/package-details`}
+               onClick={handleTourClick}
+                 to={`${process.env.PUBLIC_URL}/package-details/${props.title}`}
               >
                 View Now <i className="bx bxs-right-arrow-alt" />
               </Link>

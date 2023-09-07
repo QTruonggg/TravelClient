@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../../utils/axiosInstance";
+import { useTour } from "../../TourContext";
 
 const scrollTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -22,6 +23,16 @@ function PackageArea() {
         console.error("Error fetching data:", error);
       });
   }, []); 
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  const randomTours = shuffleArray(tours).slice(0, 6);
 
   return (
     <>
@@ -56,19 +67,20 @@ function PackageArea() {
                   ))
                 } */}
             {  
-             tours.map(tour => (
+             randomTours.map(tour => (
               <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
                 <PackageCardBeta
                   image={process.env.PUBLIC_URL + tour.images[0].imageUrl}
                   time={tour.duration}
                   title={tour.name}
                   price={tour.price}
+                  tourId={tour.id}
                 />
               </div>
               ))
             }
             
-            <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
+            {/* <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
               <PackageCardBeta
                 image="/images/package/best-s2.png"
                 time="5 Day &amp; 4 night"
@@ -92,7 +104,7 @@ function PackageArea() {
                       feugiat sapien dignissim id."
                 price="$87.00"
               />
-            </div>
+            </div> */}
             
             
           </div>
@@ -108,13 +120,26 @@ function PackageArea() {
 }
 
 function PackageCardBeta(props) {
+  const { setTourDetails } = useTour();
+
+  const handleTourClick = () => {
+    axiosInstance(`api/Tour/${props.tourId}`)
+      .then((response) => {
+        console.log("Tour details:", response.data);
+        localStorage.setItem('tourDetails', JSON.stringify(response.data));
+        setTourDetails(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching tour details:", error);
+      });
+  }
   return (
     <>
       <div className="package-card-beta" style={{height:'100%'}}>
         <div className="package-thumb" style={{height:'60%'}}>
-          <Link
-            to={`${process.env.PUBLIC_URL}/package-details`}
-            onClick={scrollTop}
+        <Link
+            onClick={handleTourClick}
+            to={`${process.env.PUBLIC_URL}/package-details/${props.title}`}
           >
             <img
               src={`${process.env.PUBLIC_URL} ${props.image}`}
@@ -128,19 +153,19 @@ function PackageCardBeta(props) {
         </div>
         <div className="package-card-body">
           <h3 className="p-card-title">
-            <Link
-              to={`${process.env.PUBLIC_URL}/package-details`}
-              onClick={scrollTop}
-            >
+          <Link
+            onClick={handleTourClick}
+            to={`${process.env.PUBLIC_URL}/package-details/${props.title}`}
+          >
               {props.title}
             </Link>
           </h3>
           <div className="p-card-bottom">
             <div className="book-btn">
-              <Link
-                to={`${process.env.PUBLIC_URL}/package-details`}
-                onClick={scrollTop}
-              >
+            <Link
+            onClick={handleTourClick}
+            to={`${process.env.PUBLIC_URL}/package-details/${props.title}`}
+          >
                 View Now <i className="bx bxs-right-arrow-alt" />
               </Link>
             </div>

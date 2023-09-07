@@ -21,7 +21,10 @@ function DestinationDetailsWrapper() {
                   />
                 </div>
                 <div className="dd-body">
-                  <h3 className="dd-subtitle">Discover New York</h3>
+                  <h3 className="dd-subtitle">Name District</h3>  
+
+                  <p>Description</p>
+                  
                   <p>
                     Duis rutrum nisl urna. Maecenas vel libero faucibus nisi
                     venenatis hendrerit a id lectus. Suspendissendt blandit
@@ -131,7 +134,7 @@ function DestinationDetailsWrapper() {
             </div>
             <div className="col-lg-4 mt-5 mt-lg-0">
               <div className="package-sidebar">
-                <aside className="package-widget widget-search">
+                {/* <aside className="package-widget widget-search">
                   <div className="widget-title">
                     <h4>Search Here</h4>
                   </div>
@@ -210,12 +213,21 @@ function DestinationDetailsWrapper() {
                       </li>
                     </ul>
                   </div>
-                </aside>
+                </aside> */}
                 <aside className="package-widget widget-gallary mt-30">
                   <div className="widget-title">
-                    <h4>New Destination</h4>
+                    <h4>List Place</h4>
                   </div>
-                  <SRLWrapper>
+                  <div style={{textAlign:'center'}}>
+                    <a href={process.env.PUBLIC_URL +"/images/gallary/WidgetfullIMG1.png"}>
+                        <img
+                          src={process.env.PUBLIC_URL + "/images/gallary/sb-gallary-1.png"} alt="img place" 
+                          style={{width:'95%', height:'220px', objectFit:'cover'}}
+                        />
+                      </a>
+                      <p>name Place</p>
+                  </div>
+                  {/* <SRLWrapper>
                   <ul className=" widget-body">
                     <li>
                       <a
@@ -326,12 +338,12 @@ function DestinationDetailsWrapper() {
                       </a>
                     </li>
                   </ul>
-                  </SRLWrapper>
+                  </SRLWrapper> */}
                 </aside>
                 <aside className="widget-banner mt-30">
                   <Link
                     onClick={scrollTop}
-                    to={`${process.env.PUBLIC_URL}/package-details`}
+                    // to={`${process.env.PUBLIC_URL}/package-details`}
                   >
                     <img
                       src={

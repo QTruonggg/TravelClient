@@ -7,13 +7,9 @@ function DestinationCart(props) {
   };
   return (
     <>
-    <Link
-      onClick={scrollTop}
-      to={`${process.env.PUBLIC_URL}/destination-details`}
-    >
       <div className="destination-card-style-two mb-0" style={{height:'100%'}}>
         <div className="d-card-thumb" style={{height:'100%'}}>
-          <img src={props.image} alt="CartIMG" style={{height:'100%', objectFit:'cover'}}/>
+          <img src={props.image} alt="Img District" style={{height:'100%', objectFit:'cover'}}/>
         </div>
         <div className="d-card-content">
           <h4 className="destination-title">
@@ -27,7 +23,6 @@ function DestinationCart(props) {
           </div>
         </div>
       </div>
-      </Link>
     </>
   );
 }

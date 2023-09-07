@@ -8,7 +8,7 @@ function HomeOneDestinationCart(props) {
       <div className="destination-card-style-one" style={{height:'292px'}}>
         <div className="d-card-thumb" style={{height:'100%'}}>
           <Link
-            to={`${process.env.PUBLIC_URL}/destination-details`}
+            to={`${process.env.PUBLIC_URL}/tourspot-details/${props.title}`}
             onClick={scrollTop}
           >
             <img src={props.image} alt="images" style={{height:'100%', objectFit:'cover'}}/>
@@ -18,7 +18,7 @@ function HomeOneDestinationCart(props) {
           <div className="d-card-content">
             <h3 className="d-card-title">
               <Link
-                to={`${process.env.PUBLIC_URL}/destination-details`}
+                to={`${process.env.PUBLIC_URL}/tourspot-details/${props.title}`}
                 onClick={scrollTop}
               >
                 {props.title}

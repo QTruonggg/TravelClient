@@ -2,12 +2,12 @@ import React, { useState, useReducer, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 
 function Header() {
   const [isSearchActive, setSearchActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [startDate, setStartDate] = useState(new Date());
+  // const [startDate, setStartDate] = useState(new Date());
   const [isCatagoryActive, setCatagoryActive] = useState(false);
   const [isOpenActive, setOpenActive] = useState(false);
 
@@ -26,7 +26,7 @@ function Header() {
   const isSticky = (e) => {
     const header = document.querySelector('header');
     const scrollTop = window.scrollY;
-    scrollTop >= 200 ? header.classList.add('sticky') : header.classList.remove('sticky');
+    scrollTop >= 200 ? header?.classList?.add('sticky') : header?.classList?.remove('sticky');
 };
 
   
@@ -85,20 +85,20 @@ function Header() {
     { value: "7", label: " Mumbai" },
     { value: "8", label: " New Delhi" },
   ];
-  const optionsForTravel = [
-    { value: "1", label: "Adventure Tour" },
-    { value: "2", label: "Group Tour" },
-    { value: "3", label: "Couple Tour" },
-    { value: "4", label: "Sea Beach" },
-    { value: "5", label: "Mountain Tour" },
-  ];
-  const optionsForPerson = [
-    { value: "1", label: "01" },
-    { value: "2", label: "02" },
-    { value: "3", label: "03" },
-    { value: "4", label: "04" },
-    { value: "5", label: "05" },
-  ];
+  // const optionsForTravel = [
+  //   { value: "1", label: "Adventure Tour" },
+  //   { value: "2", label: "Group Tour" },
+  //   { value: "3", label: "Couple Tour" },
+  //   { value: "4", label: "Sea Beach" },
+  //   { value: "5", label: "Mountain Tour" },
+  // ];
+  // const optionsForPerson = [
+  //   { value: "1", label: "01" },
+  //   { value: "2", label: "02" },
+  //   { value: "3", label: "03" },
+  //   { value: "4", label: "04" },
+  //   { value: "5", label: "05" },
+  // ];
   return (
     <>
       <div
@@ -118,7 +118,7 @@ function Header() {
               <div className="row g-4">
                 <div className="col-lg-10">
                   <div className="row gx-0 gy-4">
-                    <div className="col-lg-3 col-md-6">
+                    <div className="col-lg-12 col-md-12">
                       <div className="select-box">
                         <div className="searchbox-icons">
                           <i className="bi bi-geo-alt" />
@@ -137,7 +137,7 @@ function Header() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-6">
+                    {/* <div className="col-lg-3 col-md-6">
                       <div className="select-box">
                         <div className="searchbox-icons">
                           <i className="bi bi-text-paragraph" />
@@ -153,8 +153,8 @@ function Header() {
                           ></Select>
                         </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-6">
+                    </div> */}
+                    {/* <div className="col-lg-3 col-md-6">
                       <div className="select-box">
                         <div className="searchbox-icons">
                           <i className="bi bi-person-plus" />
@@ -170,8 +170,8 @@ function Header() {
                           ></Select>
                         </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-6">
+                    </div> */}
+                    {/* <div className="col-lg-3 col-md-6">
                       <div className="select-box">
                         <div className="searchbox-icons">
                           <i className="bi bi-capslock" />
@@ -186,7 +186,7 @@ function Header() {
                           />
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="col-lg-2">
@@ -746,9 +746,9 @@ function Header() {
               <div className="col-xl-2">
                 <div className="nav-right float-end d-xl-flex d-none ">
                   <ul className="nav-actions">
-                    <li className="category-toggle" onClick={handleCatagorybtn}>
+                    {/* <li className="category-toggle" onClick={handleCatagorybtn}>
                       <i className="bx bx-category" />
-                    </li>
+                    </li> */}
                     <li className="search-toggle" onClick={handleSearcghBtn}>
                       <i className="bx bx-search-alt" />
                     </li>

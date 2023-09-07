@@ -29,6 +29,9 @@ import HomethreeLayout from './components/layout/HomethreeLayout';
 import HomeFourLayout from './components/layout/HomeFourLayout';
 import Hotel from './components/pages/stay/Hotel';
 import Resort from './components/pages/stay/Resort';
+import { TourProvider } from './components/TourContext';
+import DetailTourSpot from './components/pages/homeThree/DetailTourSpot';
+import Search from './components/pages/homeThree/Search';
 
 /*
  * Version :Tourx-pro 0.1
@@ -46,18 +49,22 @@ function Root() {
     <BrowserRouter basename="/">
       <Switch>
         {/*main layout*/}
+        <TourProvider>
         <Route exact path="/index3" component={MainLayout} />
         {/* secound layout */}
+        
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/index2`}
           component={HomePageTwoLayout}
         />
-        <Route
-          exact
-          path={`${process.env.PUBLIC_URL}/`}
-          component={HomethreeLayout}
-        />
+        
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/`}
+            component={HomethreeLayout}
+          />
+        
         <Route
           exact
           path={`${process.env.PUBLIC_URL}/index4`}
@@ -79,7 +86,7 @@ function Root() {
           />
           <Route
             exact
-            path={`${process.env.PUBLIC_URL}/destination-details`}
+            path={`${process.env.PUBLIC_URL}/destination-details/:name`}
             component={DestinationDetails}
           />
 
@@ -91,6 +98,12 @@ function Root() {
           />
           <Route
             exact
+            path={`${process.env.PUBLIC_URL}/package-details/:tourName`}
+            component={PackageDetails}
+          />
+          
+          <Route
+            exact
             path={`${process.env.PUBLIC_URL}/package-sidebar`}
             component={PackageSidebar}
           />
@@ -98,11 +111,6 @@ function Root() {
             exact
             path={`${process.env.PUBLIC_URL}/package-standard`}
             component={PackageStandard}
-          />
-          <Route
-            exact
-            path={`${process.env.PUBLIC_URL}/package-details`}
-            component={PackageDetails}
           />
 
           {/* all stay pages component*/}
@@ -120,6 +128,18 @@ function Root() {
             exact
             path={`${process.env.PUBLIC_URL}/resort`}
             component={Resort}
+          />
+
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/tourspot-details/:name`}
+            component={DetailTourSpot}
+          />
+
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/search/:name`}
+            component={Search}
           />
 
           {/* all blog pages */}
@@ -169,6 +189,7 @@ function Root() {
             component={Error}
           />
         </Layout>
+        </TourProvider>
       </Switch>
     </BrowserRouter>
   </>

@@ -20,8 +20,8 @@ function HomePageThreeHeader() {
     const header = document.querySelector("header");
     const scrollTop = window.scrollY;
     scrollTop >= 200
-      ? header.classList.add("sticky")
-      : header.classList.remove("sticky");
+      ? header?.classList?.add("sticky")
+      : header?.classList?.remove("sticky");
   };
 
   const initialState = { activeMenu: "" };
@@ -614,12 +614,12 @@ function HomePageThreeHeader() {
                     >
                       <i className="bx bx-search-alt" />
                     </div>
-                    <div
+                    {/* <div
                       className="category-toggle"
                       onClick={handleCatagorybtn}
                     >
                       <i className="bx bx-category" />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

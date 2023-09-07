@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../../utils/axiosInstance';
+import { Link } from 'react-router-dom';
 
 function TopDestination() {
   const [districts, setDistricts] = useState([]);
@@ -16,6 +17,10 @@ function TopDestination() {
             console.error('Error fetching online users:', error);
         });
 }, []);
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
 
   return (
@@ -47,21 +52,36 @@ function TopDestination() {
             {
             districts.slice(0, 1).map((district, index) => (
               <div key={index} className="col-lg-6 col-md-12 col-sm-10 fadeffect">
-                <DestinationItem image={district.images[0].imageUrl} title={district.name} place={`${district.touristspots.length} Place`} />
+                <Link
+                  onClick={scrollTop}
+                  to={`${process.env.PUBLIC_URL}/destination-details/${district.name}`}
+                >
+                  <DestinationItem image={district.images[0].imageUrl} title={district.name} place={`${district.touristspots.length} Place`} />
+                </Link>
               </div>
             ))
             }
             {
             districts.slice(1, 5).map((district, index) => (
               <div key={index} className="col-lg-3 col-md-6 col-sm-10 fadeffect">
-                <DestinationItem image={district.images[0].imageUrl} title={district.name} place={`${district.touristspots.length} Place`} />
+                <Link
+                  onClick={scrollTop}
+                  to={`${process.env.PUBLIC_URL}/destination-details/${district.name}`}
+                >
+                  <DestinationItem image={district.images[0].imageUrl} title={district.name} place={`${district.touristspots.length} Place`} />
+                </Link>
               </div>
             ))
             }
             {
             districts.slice(5, 6).map((district, index) => (
               <div key={index} className="col-lg-6 col-md-12 col-sm-10 fadeffect">
-                <DestinationItem image={district.images[0].imageUrl} title={district.name} place={`${district.touristspots.length} Place`} />
+                <Link
+                  onClick={scrollTop}
+                  to={`${process.env.PUBLIC_URL}/destination-details/${district.name}`}
+                >
+                  <DestinationItem image={district.images[0].imageUrl} title={district.name} place={`${district.touristspots.length} Place`} />
+                </Link>
               </div>
             ))
             }
@@ -101,8 +121,8 @@ function TopDestination() {
         </div>
         <div className="destination-overlay">
           <div className="content">
-            <a href="destination-details.html"><h5 style={{fontSize:'36px'}}>{props.title}</h5></a>
-            <a href="destination-details.html"><h6>{props.place}</h6></a>
+            <h5 style={{fontSize:'36px'}}>{props.title}</h5>
+            <h6>{props.place}</h6>
           </div>
         </div>
       </div>

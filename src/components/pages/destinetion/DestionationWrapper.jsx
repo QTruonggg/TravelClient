@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Pagination from "../../common/Pagination";
 import DestinationCart from "./DestinationCart";
 import axiosInstance from "../../../utils/axiosInstance";
+import { Link } from "react-router-dom";
 
 function DestionationWrapper() {
   const [districts, setDistricts] = useState([]);
@@ -20,6 +21,11 @@ function DestionationWrapper() {
         });
 }, []);
 
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+
   return (
     <>
       <div className="destination-wrapper pt-110">
@@ -28,10 +34,15 @@ function DestionationWrapper() {
           {
             districts.map((district, index) => (
               <div className="col-lg-3 col-md-4 col-sm-6" style={{height:'288px'}}>
+                <Link
+                  onClick={scrollTop}
+                  to={`${process.env.PUBLIC_URL}/destination-details/${district.name}`}
+                  >
                 <DestinationCart 
-                  image={district.images[0].imageUrl} 
+                  image={district.images?.[0]?.imageUrl || ""} 
                   palce={district.name} 
                   palceCount={`${district.touristspots.length}`} />
+                  </Link>
               </div>
             ))
             }
