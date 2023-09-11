@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import axiosInstance from "../../../utils/axiosInstance";
 import Breadcrumb from "../../common/Breadcrumb";
 import { useTour } from "../../TourContext";
+import Header from "../../common/Header";
+import Footer from "../../common/Footer";
 
 function DetailTourSpot() {
   const { name } = useParams();
@@ -43,6 +45,7 @@ function DetailTourSpot() {
 
   return (
     <>
+    <Header/>
     <Breadcrumb name={name} />
     
     {/* <div className="breadcrumb breadcrumb-style-one">
@@ -191,7 +194,7 @@ function DetailTourSpot() {
                             <div key={index} style={{ textAlign: "center", paddingBottom:'20px' }}>
                                 <Link
                                     onClick={() => handleTourClick(hotel.id)}
-                                    to={`${process.env.PUBLIC_URL}/package-details/${hotel.name}`}
+                                    to={`${process.env.PUBLIC_URL}/hotel-detail/${hotel.name}`}
                                 >
                                     <img
                                     src={hotel.images[0]?.imageUrl || ""}
@@ -218,7 +221,7 @@ function DetailTourSpot() {
                             <div key={index} style={{ textAlign: "center", paddingBottom:'20px' }}>
                                 <Link
                                     onClick={() => handleTourClick(resort.id)}
-                                    to={`${process.env.PUBLIC_URL}/package-details/${resort.name}`}
+                                    to={`${process.env.PUBLIC_URL}/resort-detail/${resort.name}`}
                                 >
                                     <img
                                     src={resort.images[0]?.imageUrl || ""}
@@ -245,7 +248,7 @@ function DetailTourSpot() {
                             <div key={index} style={{ textAlign: "center", paddingBottom:'20px' }}>
                                 <Link
                                     onClick={() => handleTourClick(restaurant.id)}
-                                    to={`${process.env.PUBLIC_URL}/package-details/${restaurant.name}`}
+                                    to={`${process.env.PUBLIC_URL}/restaurant-detail/${restaurant.name}`}
                                 >
                                     <img
                                     src={restaurant.images[0]?.imageUrl || ""}
@@ -284,6 +287,7 @@ function DetailTourSpot() {
         </div>
       </div>
     </>
+    <Footer className="footer-area mt-110" />
   </>
   )
 }

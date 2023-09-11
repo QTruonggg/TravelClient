@@ -8,12 +8,11 @@ export function useTour() {
 
 export function TourProvider({ children }) {
   const [tourDetails, setTourDetails] = useState(() => {
-    // Kiểm tra xem có dữ liệu trong localStorage không
     const storedTourDetails = localStorage.getItem('tourDetails');
     return storedTourDetails ? JSON.parse(storedTourDetails) : null;
   });
 
-  console.log("tour: ",tourDetails);
+  // console.log("tour: ",tourDetails);
   return (
     <TourContext.Provider value={{ tourDetails, setTourDetails }}>
       {children}

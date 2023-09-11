@@ -70,7 +70,7 @@ function PackageArea() {
              randomTours.map(tour => (
               <div className="col-lg-4 col-md-6 col-sm-10  fadeffect">
                 <PackageCardBeta
-                  image={process.env.PUBLIC_URL + tour.images[0].imageUrl}
+                  image={process.env.PUBLIC_URL + tour?.images[0]?.imageUrl}
                   time={tour.duration}
                   title={tour.name}
                   price={tour.price}

@@ -32,6 +32,10 @@ import Resort from './components/pages/stay/Resort';
 import { TourProvider } from './components/TourContext';
 import DetailTourSpot from './components/pages/homeThree/DetailTourSpot';
 import Search from './components/pages/homeThree/Search';
+import DetailHotel from './components/pages/homeThree/DetailHotel';
+import DetailResort from './components/pages/homeThree/DetailResort';
+import DetailRestaurant from './components/pages/homeThree/DetailRestaurant';
+import Restaurant from './components/pages/stay/Restaurant';
 
 /*
  * Version :Tourx-pro 0.1
@@ -59,11 +63,11 @@ function Root() {
           component={HomePageTwoLayout}
         />
         
-          <Route
-            exact
-            path={`${process.env.PUBLIC_URL}/`}
-            component={HomethreeLayout}
-          />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/`}
+          component={HomethreeLayout}
+        />
         
         <Route
           exact
@@ -104,6 +108,22 @@ function Root() {
           
           <Route
             exact
+            path={`${process.env.PUBLIC_URL}/hotel-detail/:name`}
+            component={DetailHotel}
+          />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/resort-detail/:name`}
+            component={DetailResort}
+          />
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/restaurant-detail/:name`}
+            component={DetailRestaurant}
+          />
+
+          <Route
+            exact
             path={`${process.env.PUBLIC_URL}/package-sidebar`}
             component={PackageSidebar}
           />
@@ -126,8 +146,8 @@ function Root() {
           />
           <Route
             exact
-            path={`${process.env.PUBLIC_URL}/resort`}
-            component={Resort}
+            path={`${process.env.PUBLIC_URL}/restaurant`}
+            component={Restaurant}
           />
 
           <Route

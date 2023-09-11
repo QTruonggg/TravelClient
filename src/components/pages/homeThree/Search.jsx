@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import DestinationCart from "../destinetion/DestinationCart";
 import { Link, useParams } from "react-router-dom";
 import axiosInstance from "../../../utils/axiosInstance";
+import Header from "../../common/Header";
+import Footer from "../../common/Footer";
 
 function Search() {
     const [dataSearch, setDataSearch] = useState();
@@ -24,6 +26,7 @@ function Search() {
 
   return (
     <>
+    <Header/>
       <div className="breadcrumb breadcrumb-style-one">
         <div className="container">
           <div className="col-lg-12 text-center">
@@ -97,6 +100,7 @@ function Search() {
           </div>
         </div>
       </div>
+      <Footer className="footer-area mt-110" />
     </>
   );
 }

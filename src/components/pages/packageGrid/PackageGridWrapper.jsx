@@ -29,7 +29,7 @@ function PackageGridWrapper() {
              tours.map(tour => (
               <div className="col-lg-4 col-md-6" key={tour.id}>
                 <PackageCard
-                  image={process.env.PUBLIC_URL + tour.images[0].imageUrl}
+                  image={process.env.PUBLIC_URL + tour?.images[0]?.imageUrl}
                   date={tour.duration}
                   title={tour.name}
                   price={tour.price}

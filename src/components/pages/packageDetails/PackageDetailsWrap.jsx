@@ -10,7 +10,7 @@ import ModalVideo from "react-modal-video";
 import { useTour } from "../../TourContext";
 
 function PackageDetailsWrap() {
-  const [isOpen, setOpen] = useState(false);
+  // const [isOpen, setOpen] = useState(false);
   const { tourDetails } = useTour();
   
 console.log(tourDetails);
@@ -930,7 +930,7 @@ console.log(tourDetails);
           </div> */}
         </div>
       </div>
-      <React.Fragment>
+      {/* <React.Fragment>
         <ModalVideo
           channel="youtube"
           autoplay
@@ -938,7 +938,7 @@ console.log(tourDetails);
           videoId="L61p2uyiMSo"
           onClose={() => setOpen(false)}
         />
-      </React.Fragment>
+      </React.Fragment> */}
     </>
               </div>
             </div>

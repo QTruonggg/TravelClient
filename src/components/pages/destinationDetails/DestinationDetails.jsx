@@ -3,6 +3,8 @@ import Breadcrumb from "../../common/Breadcrumb";
 import DestinationDetailsWrapper from "./DestinationDetailsWrapper";
 import { Link, useParams } from "react-router-dom";
 import axiosInstance from "../../../utils/axiosInstance";
+import Header from "../../common/Header";
+import Footer from "../../common/Footer";
 
 function DestinationDetails() {
   const { name } = useParams();
@@ -24,6 +26,7 @@ function DestinationDetails() {
     // console.log(districtData[0]);
   return (
     <>
+    <Header/>
     <Breadcrumb name={name} />
     {/* <DestinationDetailsWrapper /> */}
     <>
@@ -210,6 +213,7 @@ function DestinationDetails() {
         </div>
       </div>
     </>
+    <Footer className="footer-area mt-110" />
   </>
   )
 }

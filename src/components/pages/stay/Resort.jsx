@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
 import Breadcrumb from "../../common/Breadcrumb";
 import Pagination from "../../common/Pagination";
-import PackageCard from "../packageGrid/PackageCard";
 import axiosInstance from "../../../utils/axiosInstance";
+import { Link } from "react-router-dom";
+import Header from "../../common/Header";
+import Footer from "../../common/Footer";
 
 function Resort() {
     const [resort, setResort] = useState([]);
 
-  useEffect(() => {
-    axiosInstance("api/Resort")
-      .then((response) => {
-        console.log("call api Resort");
-        setResort(response.data);
-        // console.log(response.data);
-      })
-      .catch((error) => {
-        console.log("call api Resort lỗi");
-        console.error("Error fetching data:", error);
-      });
-  }, []);
+    useEffect(() => {
+      axiosInstance("api/Resort")
+        .then((response) => {
+          console.log("call api Resort");
+          setResort(response.data);
+          // console.log(response.data);
+        })
+        .catch((error) => {
+          console.log("call api Resort lỗi");
+          console.error("Error fetching data:", error);
+        });
+    }, []);
+
+  const HotelDetail = () => {
+
+  }
+
   return (
     <>
+    <Header/>
       <Breadcrumb name="All Resort" />
       <div className="package-wrapper pt-110">
         <div className="container">
@@ -28,117 +36,54 @@ function Resort() {
             {  
              resort.map(resort => (
               <div className="col-lg-4 col-md-6">
-                <PackageCard
-                  image={process.env.PUBLIC_URL + resort.images[0].imageUrl}
-                  date={resort.duration}
-                  title={resort.name}
-                  price={resort.price}
-                />
+                <div className="package-card-alpha" style={{height:'100%'}}>
+                  <div className="package-thumb" style={{height:'60%'}}>
+                    <Link
+                      onClick={HotelDetail}
+                      to={`${process.env.PUBLIC_URL}/resort-detail/${resort.name}`}
+                    >
+                      <img src={process.env.PUBLIC_URL + resort.images[0].imageUrl} alt="images" style={{height:'100%', objectFit:'cover'}}/>
+                    </Link>
+                    <p className="card-lavel">
+                      <i className="bi bi-clock" /> <span>{resort.duration}</span>
+                    </p>
+                  </div>
+                  <div className="package-card-body">
+                    <h3 className="p-card-title">
+                      <Link
+                      onClick={HotelDetail}
+                        to={`${process.env.PUBLIC_URL}/resort-detail/${resort.name}`}
+                      >
+                        {resort.name}
+                      </Link>
+                    </h3>
+                    <div className="p-card-bottom">
+                      <div className="book-btn">
+                        <Link
+                        onClick={HotelDetail}
+                          to={`${process.env.PUBLIC_URL}/resort-detail/${resort.name}`}
+                        >
+                          View Now <i className="bx bxs-right-arrow-alt" />
+                        </Link>
+                      </div>
+                      <div className="p-card-info">
+                        <span>From</span>
+                        <h6>
+                          $ {resort.price} <span>Per Person</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               ))
             }
-            {/* 
-            <div className="col-lg-4 col-md-6">
-              <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha1.png"}
-                date="7 Day &amp; 6 night"
-                title="Etiam placerat dictum consequat an pellentesque habitant."
-                price="$88.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6 ">
-              <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha2.png"}
-                date="7 Day &amp; 6 night"
-                title="Varius condimentum consequat frin Aenean pretium risus."
-                price="$89.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha3.png"}
-                date="5 Day &amp; 6 night"
-                title="Praesent sed elit mil In risus nullaam efficitur none."
-                price="$99.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha4.png"}
-                date="8 Day &amp; 7 night"
-                title="Sed ultricies sapien arcu, sed cong feugiat sapien."
-                price="$299.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha5.png"}
-                date="2 Day &amp; 3 night"
-                title="Pellentesque habitant morbi malesua tristique senectus."
-                price="$299.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha6.png"}
-                date="9 Day &amp; 5 night"
-                title="San francisco golden gate bridge, cable & fog."
-                price="$199.00"
-              />
-              
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha7.png"}
-                date="9 Day &amp; 5 night"
-                title="Etiam placerat dictum consequat an pellentesque habitant."
-                price="$120.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha8.png"}
-                date="9 Day &amp; 5 night"
-                title="Varius condimentum consequat frin Aenean pretium risus."
-                price="$119.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha9.png"}
-                date="9 Day &amp; 5 night"
-                title="Praesent sed elit mil In risus nullaam efficitur none."
-                price="$159.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha10.png"}
-                date="9 Day &amp; 5 night"
-                title="Sed ultricies sapien arcu, sed cong feugiat sapien."
-                price="$199.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha11.png"}
-                date="9 Day &amp; 5 night"
-                title="Pellentesque habitant morbi malesua tristique senectus."
-                price="$119.00"
-              />
-            </div>
-            <div className="col-lg-4 col-md-6">
-            <PackageCard
-                image={process.env.PUBLIC_URL + "/images/package/p-alpha8.png"}
-                date="9 Day &amp; 5 night"
-                title="San francisco golden gate bridge, cable & fog."
-                price="$119.00"
-              />
-            </div> */}
+            
           </div>
           <Pagination />
         </div>
       </div>
+      <Footer className="footer-area mt-110" />
     </>
   );
 }

@@ -7,62 +7,62 @@ import { Link } from "react-router-dom";
 import Header from "../../common/Header";
 import Footer from "../../common/Footer";
 
-function Hotel() {
-    const [hotel, setHotel] = useState([]);
+function Restaurant() {
+    const [restaurant, setRestaurant] = useState([]);
 
   useEffect(() => {
-    axiosInstance("api/Hotel")
+    axiosInstance("api/Restaurant")
       .then((response) => {
-        console.log("call api Hotel");
-        setHotel(response.data);
+        console.log("call api Restaurant");
+        setRestaurant(response.data);
         // console.log(response.data);
       })
       .catch((error) => {
-        console.log("call api Hotel lỗi");
+        console.log("call api Restaurant lỗi");
         console.error("Error fetching data:", error);
       });
   }, []);
 
-  const HotelDetail = () => {
+  const RestaurantDetail = () => {
 
   }
 
   return (
     <>
     <Header/>
-      <Breadcrumb name="All Hotel" />
+      <Breadcrumb name="All Restaurant" />
       <div className="package-wrapper pt-110">
         <div className="container">
           <div className="row g-4">
             {  
-             hotel.map(hotel => (
+             restaurant.map(restaurant => (
               <div className="col-lg-4 col-md-6">
                 <div className="package-card-alpha" style={{height:'100%'}}>
                   <div className="package-thumb" style={{height:'60%'}}>
                     <Link
-                      onClick={HotelDetail}
-                      to={`${process.env.PUBLIC_URL}/hotel-detail/${hotel.name}`}
+                      onClick={RestaurantDetail}
+                      to={`${process.env.PUBLIC_URL}/restaurant-detail/${restaurant.name}`}
                     >
-                      <img src={process.env.PUBLIC_URL + hotel.images[0].imageUrl} alt="images" style={{height:'100%', objectFit:'cover'}}/>
+                      <img src={process.env.PUBLIC_URL + restaurant?.images[0]?.imageUrl} alt="images" style={{height:'100%', objectFit:'cover'}}/>
                     </Link>
                     <p className="card-lavel">
-                      <i className="bi bi-clock" /> <span>{hotel.duration}</span>
+                      <i className="bi bi-clock" /> <span>{restaurant.duration}</span>
                     </p>
                   </div>
                   <div className="package-card-body">
                     <h3 className="p-card-title">
                       <Link
-                      onClick={HotelDetail}
-                        to={`${process.env.PUBLIC_URL}/hotel-detail/${hotel.name}`}
+                      onClick={RestaurantDetail}
+                        to={`${process.env.PUBLIC_URL}/restaurant-detail/${restaurant.name}`}
                       >
-                        {hotel.name}
+                        {restaurant.name}
                       </Link>
                     </h3>
                     <div className="p-card-bottom">
                       <div className="book-btn">
                         <Link
-                        onClick={HotelDetail}
-                          to={`${process.env.PUBLIC_URL}/hotel-detail/${hotel.name}`}
+                        onClick={RestaurantDetail}
+                          to={`${process.env.PUBLIC_URL}/restaurant-detail/${restaurant.name}`}
                         >
                           View Now <i className="bx bxs-right-arrow-alt" />
                         </Link>
@@ -70,7 +70,7 @@ function Hotel() {
                       <div className="p-card-info">
                         <span>From</span>
                         <h6>
-                          $ {hotel.price} <span>Per Person</span>
+                          $ {restaurant.price} <span>Per Person</span>
                         </h6>
                       </div>
                     </div>
@@ -88,4 +88,4 @@ function Hotel() {
   );
 }
 
-export default Hotel;
+export default Restaurant;
